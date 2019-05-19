@@ -1,3 +1,6 @@
+# Criminal-Finding: Project of Course Cloud Computing
+Groupmember: Chongwu Ruan, Pengchong Wang, Tingyu Guan 
+
 # Prerequisites
 For the JavaScript SDK to work your APIs need to support CORS. The Amazon API Gateway developer guide explains how to [setup CORS for an endpoint]().
 The generated SDK depends on third-party libraries. Include all of the scripts in your webpage
@@ -73,6 +76,15 @@ var apigClient = apigClientFactory.newClient({
     apiKey: 'API_KEY'
 });
 ```
-
-
+## Module Explanation
+-index.html     Mainpage of user interface
+-official.html      Officials' user interface
+-citizen.html       Citizens' user interface    
+-thanks.html        Closing page
+-functions.js       Main function that connects to applications in AWS
+-index_photo.py       Index_photo Lambda function. Triggered by S3 bucket, save information in ElasticSearch.
+-criminal_recognition.py    Lambda function. Triggered by API Gateway, call Rekognition and return search result.
+-update_alert.py         Lambda function. Triggered by CloudWatch, read new update from SQS and send emails to the police.
+-get_info.py        Lambda function. Triggered by API Gateway, call Lex.
+-update_info.py     Fullfillment Lambda function of Lex. Send update information to SQS.
 
