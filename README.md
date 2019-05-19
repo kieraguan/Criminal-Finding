@@ -77,8 +77,8 @@ var apigClient = apigClientFactory.newClient({
 });
 ```
 ## Module Explanation
--index.html     Mainpage of user interface
--official.html      Officials' user interface
+-index.html     Mainpage of user interface\\
+-official.html      Officials' user interface\\
 -citizen.html       Citizens' user interface    
 -thanks.html        Closing page
 -functions.js       Main function that connects to applications in AWS
