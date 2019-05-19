@@ -77,14 +77,14 @@ var apigClient = apigClientFactory.newClient({
 });
 ```
 ## Module Explanation
--index.html     Mainpage of user interface \<br> 
--official.html      Officials' user interface \<br> 
--citizen.html       Citizens' user interface    \<br> 
--thanks.html        Closing page\<br> 
--functions.js       Main function that connects to applications in AWS\<br> 
--index_photo.py       Index_photo Lambda function. Triggered by S3 bucket, save information in ElasticSearch.\<br> 
--criminal_recognition.py    Lambda function. Triggered by API Gateway, call Rekognition and return search result.\<br> 
--update_alert.py         Lambda function. Triggered by CloudWatch, read new update from SQS and send emails to the police.\<br> 
--get_info.py        Lambda function. Triggered by API Gateway, call Lex.\<br> 
--update_info.py     Fullfillment Lambda function of Lex. Send update information to SQS.\<br> 
+-index.html     Mainpage of user interface <br> 
+-official.html      Officials' user interface <br> 
+-citizen.html       Citizens' user interface    <br> 
+-thanks.html        Closing page<br> 
+-functions.js       Main function that connects to applications in AWS<br> 
+-index_photo.py       Index_photo Lambda function. Triggered by S3 bucket, save information in ElasticSearch.<br> 
+-criminal_recognition.py    Lambda function. Triggered by API Gateway, call Rekognition and return search result.<br> 
+-update_alert.py         Lambda function. Triggered by CloudWatch, read new update from SQS and send emails to the police.<br> 
+-get_info.py        Lambda function. Triggered by API Gateway, call Lex.<br> 
+-update_info.py     Fullfillment Lambda function of Lex. Send update information to SQS.<br> 
 
