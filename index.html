@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Author Meta -->
+    <meta name="author" content="Colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Find The Criminal</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/linearicons.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+    <script type="text/javascript" src="js/amazon-cognito-identity.min.js"></script>
+</head>
+
+<body>
+    <div class="main-wrapper-first">
+        <div class="hero-area relative">
+            <div class="banner-area">
+                <div class="overlay overlay-bg"></div>
+                <div class="container">
+                    <div class="row height align-items-center justify-content-center">
+                        <div class="col-lg-7">
+                            <div class="banner-content text-center">
+                                <!--<h4 class="text-uppercase">your best partner</h4>-->
+                                <h1>Find The Criminal</h1>
+                                <div onclick="showCitizenForm()" class="primary-btn d-inline-flex align-items-center">
+                                    <span class="mr-10">Login as citizens</span>
+                                    <span class="lnr lnr-arrow-right"></span>
+                                </div>
+                                <div onclick="showOfficialForm()" class="primary-btn d-inline-flex align-items-center">
+                                    <span class="mr-10">Login as officials</span>
+                                    <span class="lnr lnr-arrow-right"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="contact-area pt-100 pb-100 relative" id="citizenForm" style="display: none">
+            <div class="overlay overlay-bg"></div>
+            <div class="container row" style="width:40%; margin: 0 auto;">
+                <div id='signInBtn' class="sign-btn d-inline-flex align-items-center" onclick="toSignInForm(this)">
+                    <span class="mr-10">Sign In</span>
+                </div>
+                <div id='signUpBtn' class="sign-btn d-inline-flex align-items-center" onclick="toSignUpForm(this)">
+                    <span class="mr-10">Sign Up</span>
+                </div>
+                <form id='citizenSignUp' onsubmit="citizenSignUp(this)" action="javascript:;" style="display: none">
+                    <div class="row justify-content-center contact-form">
+                        <div class="col-lg-5">
+                            <input name="name" placeholder="Your Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Name'" class="common-input mt-20" required type="text">
+                        </div>
+                        <div class="col-lg-5">
+                            <input name="id" placeholder="Your ID number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your ID number'" class="common-input mt-20" required type="text">
+                        </div>
+                        <div class="col-lg-5">
+                            <input name="phone" placeholder="Your Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Phone Number'" class="common-input mt-20" required type="text">
+                        </div>
+                        <div class="col-lg-5">
+                            <input name="email" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address'" class="common-input mt-20" required type="text">
+                        </div>
+                        <div class="col-lg-5">
+                            <input name="password" placeholder="Your Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Password'" class="common-input mt-20" required type="password">
+                        </div>
+                        <div class="col-lg-5">
+                            <input name="check" placeholder="Check Your Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Check Your Password'" class="common-input mt-20" required type="password">
+                        </div>
+                        <input type="submit" name="submit" class="sign-btn" style="margin-top: 20px" value="Go">
+                        <div class="alert-msg"></div>
+                    </div>
+                </form>
+                <form id='citizenSignIn' onsubmit="citizenSignIn(this)" action="javascript:;">
+                    <div class="row justify-content-center contact-form">
+                        <div class="col-lg-5">
+                            <input name="email" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address'" class="common-input mt-20" required type="text">
+                        </div>
+                        <div class="col-lg-5">
+                            <input name="password" placeholder="Your Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Password'" class="common-input mt-20" required type="password">
+                        </div>
+                        <input type="submit" name="submit" class="sign-btn" style="margin-top: 20px" value="Go">
+                        <div class="alert-msg"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="contact-area pt-100 pb-100 relative" id="officialForm" style="display: none">
+            <div class="overlay overlay-bg"></div>
+            <div class="container row" style="width:40%; margin: 0 auto;">
+                <form onsubmit="officialSignIn(this)" action="javascript:;">
+                    <div class="row justify-content-center contact-form">
+                        <div class="col-lg-5">
+                            <input name="username" placeholder="Your Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Username'" class="common-input mt-20" required type="text">
+                        </div>
+                        <div class="col-lg-5">
+                            <input name="password" placeholder="Your Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Password'" class="common-input mt-20" required type="password">
+                        </div>
+                        <input type="submit" name="submit" class="sign-btn" style="margin-top: 20px" value="Go">
+                        <div class="alert-msg"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
